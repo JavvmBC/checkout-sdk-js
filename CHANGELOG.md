@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.278.1](https://github.com/bigcommerce/checkout-sdk-js/compare/v1.268.0...v1.278.1) (2022-08-24)
+
+
+### Features
+
+* **checkout:** CHECKOUT-6277 add eslint config to nx ([40d317d](https://github.com/bigcommerce/checkout-sdk-js/commit/40d317dbceb6829d29c44e01a7e0c2dbb73453cc))
+* **checkout:** CHECKOUT-6780 Add Nx plugin for generating source files ([3ed6e31](https://github.com/bigcommerce/checkout-sdk-js/commit/3ed6e31b598ffbb55fbb881f4b6d63ff2b77998f))
+* **checkout:** CHECKOUT-6780 Use Nx plugin to generate source files so that payment integration packages can be automatically registered ([9c8298a](https://github.com/bigcommerce/checkout-sdk-js/commit/9c8298abce327f6a78725370aca8a552bf59c0d9))
+* **checkout:** CHECKOUT-6781 Generate new enum from existing enums ([779f3f5](https://github.com/bigcommerce/checkout-sdk-js/commit/779f3f5f891b55a05b0d3550f456cde1aa075098))
+* **checkout:** CHECKOUT-6781 Point to interfaces extracted from integration packages ([d12f024](https://github.com/bigcommerce/checkout-sdk-js/commit/d12f024a3dc53db847900f8e3d87d8c4b88ee031))
+* **checkout:** STRF-9829 Add hidePriceFromGuests to StoreConfig interface ([#1521](https://github.com/bigcommerce/checkout-sdk-js/issues/1521)) ([b31963b](https://github.com/bigcommerce/checkout-sdk-js/commit/b31963bdeaa8cadca8acec9113417b188989203c))
+* **checkout-button:** INT-6023 Resize VCO button for Discover cards ([#1489](https://github.com/bigcommerce/checkout-sdk-js/issues/1489)) ([24e78e6](https://github.com/bigcommerce/checkout-sdk-js/commit/24e78e6d40944037611aaf7fe83b6059da574c8b))
+* **payment:** ADYEN-539 added vaulting card validation ([32d846b](https://github.com/bigcommerce/checkout-sdk-js/commit/32d846b684e9e240900f6dbf05dc6e1c2f2d5f5a))
+* **payment:** INT-6115 Worldpay - Allow to pay ([a185678](https://github.com/bigcommerce/checkout-sdk-js/commit/a185678c830f5f07ba1271e03c063abd237db30c))
+* **payment:** INT-6115 Worldpay - animesh1987 | Comments ([f453fef](https://github.com/bigcommerce/checkout-sdk-js/commit/f453fef0611358eb49c985e444959059439c2cfd))
+* **payment:** INT-6128 AmazonPayV2: Introduce the new API V2 config ([#1502](https://github.com/bigcommerce/checkout-sdk-js/issues/1502)) ([11bbe8b](https://github.com/bigcommerce/checkout-sdk-js/commit/11bbe8b4ec82d063cc13d9fdf3d8f59c282b7109))
+
+
+### Bug Fixes
+
+* **checkout:** CHECKOUT-6781 Add missing exports ([3e9bec0](https://github.com/bigcommerce/checkout-sdk-js/commit/3e9bec04acc8819b7dade69e176f6b0f5fb2b1e2))
+* **checkout:** CHECKOUT-6781 Fix incorrect file path ([3718554](https://github.com/bigcommerce/checkout-sdk-js/commit/37185542ff8b04002ad29c14c2f0477f17cad0e1))
+* **checkout:** CHECKOUT-6781 Fix member pattern for button strategies ([fcc22bc](https://github.com/bigcommerce/checkout-sdk-js/commit/fcc22bc1534bbcb54ffdb0fccc19b91a3ae519db))
+* **checkout:** CHECKOUT-6781 Revert type exports ([#1526](https://github.com/bigcommerce/checkout-sdk-js/issues/1526)) ([6ea0c76](https://github.com/bigcommerce/checkout-sdk-js/commit/6ea0c7663ed4cf821d7a56963d522fef4facbd05))
+* **common:** CHECKOUT-0000 upgrade @babel/polyfill from 7.4.4 to 7.12.1 ([#1516](https://github.com/bigcommerce/checkout-sdk-js/issues/1516)) ([e3eb94b](https://github.com/bigcommerce/checkout-sdk-js/commit/e3eb94b8163e669fc92e48a750f01a8ac0212094))
+* **common:** CHECKOUT-0000 upgrade @bigcommerce/request-sender from 1.0.3 to 1.2.1 ([#1533](https://github.com/bigcommerce/checkout-sdk-js/issues/1533)) ([59aeeeb](https://github.com/bigcommerce/checkout-sdk-js/commit/59aeeebbbf4552479dbfbef58feb96349d3fe771))
+* **common:** CHECKOUT-0000 upgrade @types/lodash from 4.14.178 to 4.14.182 ([#1531](https://github.com/bigcommerce/checkout-sdk-js/issues/1531)) ([23e09e6](https://github.com/bigcommerce/checkout-sdk-js/commit/23e09e63280e25cfc38a82d5ab58305a90175ad6))
+* **common:** CHECKOUT-0000 upgrade iframe-resizer from 3.6.2 to 3.6.6 ([#1532](https://github.com/bigcommerce/checkout-sdk-js/issues/1532)) ([2935623](https://github.com/bigcommerce/checkout-sdk-js/commit/29356236ae5be2b8a38a086bdae9caef8104a416))
+* **common:** CHECKOUT-0000 upgrade rxjs from 6.5.3 to 6.6.7 ([#1515](https://github.com/bigcommerce/checkout-sdk-js/issues/1515)) ([4969178](https://github.com/bigcommerce/checkout-sdk-js/commit/4969178f89c597c710aaf1a4a1f55d693700c95e))
+* **order:** CHECKOUT-000 update order consignments interface ([#1552](https://github.com/bigcommerce/checkout-sdk-js/issues/1552)) ([4644e37](https://github.com/bigcommerce/checkout-sdk-js/commit/4644e3784f6be26a476ddd0850c713382421cb1e))
+* **payment:** INT-5854 [Mollie] Klarna is not available if cart contains digital products ([#1510](https://github.com/bigcommerce/checkout-sdk-js/issues/1510)) ([9077b3e](https://github.com/bigcommerce/checkout-sdk-js/commit/9077b3e05d4eda9e01ae7f855a07e3caee90ee1e))
+* **payment:** PAYMENTS-8045 Fix form fields parameter name for PPSDK redirect ([003ab9e](https://github.com/bigcommerce/checkout-sdk-js/commit/003ab9e145c99234666e5a3c48f2f1e69e7777bd))
+* **payment:** STRIPE-130 Stripe UPE making postal code not always required to make purchase ([778c013](https://github.com/bigcommerce/checkout-sdk-js/commit/778c0132e07ff025791586eec33a3d82aa1a616e))
+* **payment:** STRIPE-51 set a stored card as default during checkout ([#1498](https://github.com/bigcommerce/checkout-sdk-js/issues/1498)) ([d929a2d](https://github.com/bigcommerce/checkout-sdk-js/commit/d929a2d20cd424a4a88430a8571b7ab5e3dfff3d))
+
+
+### Code Refactoring
+
+* **common:** CHECKOUT-6781 Remove redundant logs ([0fc2cf5](https://github.com/bigcommerce/checkout-sdk-js/commit/0fc2cf5807496accc23970ebebf53a4a131a9f12))
+* **payment:** CHECKOUT-6781 Remove unnecessary exports ([40990c2](https://github.com/bigcommerce/checkout-sdk-js/commit/40990c205559327155dfec4ca9d6aa0e72005587))
+* **payment:** PAYPAL-1567 removed unnecessary method and class variable in PayPalCommerceVenmoButtonStrategy ([#1509](https://github.com/bigcommerce/checkout-sdk-js/issues/1509)) ([e50dee7](https://github.com/bigcommerce/checkout-sdk-js/commit/e50dee76eb1b1fc4b779f72f3f342e77271fa5a7))
+
 ### [1.278.1](https://github.com/bigcommerce/checkout-sdk-js/compare/v1.278.0...v1.278.1) (2022-08-13)
 
 ## [1.278.0](https://github.com/bigcommerce/checkout-sdk-js/compare/v1.277.0...v1.278.0) (2022-08-12)
