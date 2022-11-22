@@ -59,6 +59,7 @@ export interface StripeCustomerEvent extends StripeEvent {
 }
 
 export interface StripeShippingEvent extends StripeEvent {
+    mode?: string;
     isNewAddress?: boolean;
     phoneFieldRequired: boolean;
     value: {
@@ -70,8 +71,16 @@ export interface StripeShippingEvent extends StripeEvent {
             postal_code: string;
             state: string;
         };
-        name: string;
+        name?: string;
+        firstName?: string;
+        lastName?: string;
+        phone?: string;
+    };
+    fields?: {
         phone: string;
+    };
+    display?: {
+        name: string;
     };
 }
 
@@ -186,6 +195,7 @@ export interface StripeElementsCreateOptions {
     allowedCountries?: string[];
     defaultValues?: ShippingDefaultValues | CustomerDefaultValues;
     validation?: validationElement;
+    display?: { name: DisplayName };
 }
 
 interface validationElement {
@@ -197,7 +207,9 @@ interface validationRequiredElement {
 }
 
 interface ShippingDefaultValues {
-    name: string;
+    name?: string;
+    firstName?: string;
+    lastName?: string;
     phone: string;
     address: {
         line1: string;
@@ -209,8 +221,24 @@ interface ShippingDefaultValues {
     };
 }
 
+export enum Mode {
+    SHIPPING = 'shipping',
+    BILLING = 'billing',
+}
+
+export enum DisplayName {
+    SPLIT = 'split',
+    FULL = 'full',
+    ORGANIZATION = 'organization',
+}
+
 interface CustomerDefaultValues {
+    mode: Mode;
     email: string;
+    allowedCountries?: string[];
+    display?: {
+        name: DisplayName;
+    };
 }
 
 export interface StripeElements {

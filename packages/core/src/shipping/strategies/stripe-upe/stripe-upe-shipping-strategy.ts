@@ -7,6 +7,8 @@ import {
 } from '../../../common/error/errors';
 import { PaymentMethodActionCreator } from '../../../payment';
 import {
+    DisplayName,
+    Mode,
     StripeElements,
     StripeElementsCreateOptions,
     StripeElementType,
@@ -142,7 +144,7 @@ export default class StripeUPEShippingStrategy implements ShippingStrategy {
         const shipping = getShippingAddress();
         const shippingPhoneField = shippingFields.find((field) => field.name === 'phone');
         let option: StripeElementsCreateOptions = {
-            mode: 'shipping',
+            mode: Mode.SHIPPING,
             allowedCountries: [availableCountries],
             fields: {
                 phone: 'always',
@@ -152,6 +154,9 @@ export default class StripeUPEShippingStrategy implements ShippingStrategy {
                     required:
                         shippingPhoneField && shippingPhoneField.required ? 'always' : 'never',
                 },
+            },
+            display: {
+                name: DisplayName.SPLIT,
             },
         };
 
@@ -175,7 +180,8 @@ export default class StripeUPEShippingStrategy implements ShippingStrategy {
             option = {
                 ...option,
                 defaultValues: {
-                    name: lastName ? `${firstName} ${lastName}` : firstName,
+                    firstName,
+                    lastName,
                     phone,
                     address: {
                         line1: address1,
