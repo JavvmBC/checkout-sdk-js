@@ -238,6 +238,14 @@ export default class StripeUPEPaymentStrategy implements PaymentStrategy {
         }
     }
 
+    private _getChannelName() {
+        const channel_name =
+            this._store.getState().config.getConfig()?.storeConfig?.links.siteLink ||
+            'problem getting channel name';
+
+        return channel_name.split('://')[1];
+    }
+
     private async _executeWithAPM(methodId: string): Promise<InternalCheckoutSelectors> {
         const paymentMethod = this._store
             .getState()
@@ -250,6 +258,7 @@ export default class StripeUPEPaymentStrategy implements PaymentStrategy {
                     vault_payment_instrument: false,
                     confirm: false,
                     set_as_default_stored_instrument: false,
+                    channel_name: this._getChannelName(),
                 },
             },
         };
@@ -279,6 +288,7 @@ export default class StripeUPEPaymentStrategy implements PaymentStrategy {
                     vault_payment_instrument: shouldSaveInstrument,
                     confirm: false,
                     set_as_default_stored_instrument: shouldSetAsDefaultInstrument,
+                    channel_name: this._getChannelName(),
                 },
             },
         };
@@ -315,6 +325,7 @@ export default class StripeUPEPaymentStrategy implements PaymentStrategy {
                         confirm: false,
                         client_token: paymentMethod.clientToken,
                         set_as_default_stored_instrument: shouldSetAsDefaultInstrument,
+                        channel_name: this._getChannelName(),
                     },
                 },
             };
@@ -499,6 +510,7 @@ export default class StripeUPEPaymentStrategy implements PaymentStrategy {
                             confirm: false,
                             vault_payment_instrument: shouldSaveInstrument,
                             set_as_default_stored_instrument: shouldSetAsDefaultInstrument,
+                            channel_name: this._getChannelName(),
                         },
                     },
                 };
@@ -559,6 +571,7 @@ export default class StripeUPEPaymentStrategy implements PaymentStrategy {
                         },
                         confirm: false,
                         set_as_default_stored_instrument: shouldSetAsDefaultInstrument,
+                        channel_name: this._getChannelName(),
                     },
                 },
             };
